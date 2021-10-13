@@ -1,0 +1,7 @@
+.list {
+  list-style: none;
+}
+.text {
+  padding: 5px 0;
+  text-transform: capitalize;
+}
