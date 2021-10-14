@@ -1,4 +1,5 @@
 import s from './Statistics.module.css';
+import PropTypes from 'prop-types';
 
 function Statistics({ positivePercentage, ...feedbacks }) {
   return (
@@ -12,5 +13,10 @@ function Statistics({ positivePercentage, ...feedbacks }) {
     </ul>
   );
 }
+
+Statistics.propTypes = {
+  positivePercentage: PropTypes.number,
+  feedbacks: PropTypes.object,
+};
 
 export default Statistics;

@@ -23,20 +23,20 @@ class App extends Component {
 
   render() {
     const { good, neutral, bad } = this.state;
+    const { onClickBtnFeedback } = this;
     const feedbacks = Object.keys(this.state);
     const totalFeedbacks = feedbacks.reduce(
       (acc, el) => acc + this.state[el],
       0,
     );
-    const positivePercentage = Math.round(
-      (this.state.good / totalFeedbacks) * 100,
-    );
+    const positivePercentage = Math.round((good / totalFeedbacks) * 100);
+
     return (
       <div className="App">
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={feedbacks}
-            onLeaveFeedback={this.onClickBtnFeedback}
+            onLeaveFeedback={onClickBtnFeedback}
           />
         </Section>
         <Section title="Statistics">
